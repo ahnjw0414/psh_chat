@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>풍생고등학교 익명 채팅방</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <header class="chat-header">
+            <div class="header-left">풍생고등학교 익명 채팅방</div>
+            <div class="header-right">
+                <span id="user-display-name">로딩 중...</span>
+                <button id="mypage-btn">마이페이지</button>
+                <button id="logout-btn">로그아웃</button>
+            </div>
+        </header>
+
+        <main class="chat-messages" id="chat-messages">
+            </main>
+
+        <footer class="chat-input-area">
+            <div class="input-options">
+                <label class="toggle-anonymous">
+                    <input type="checkbox" id="anonymous-checkbox" checked>
+                    <span class="toggle-text">익명으로 보내기</span>
+                </label>
+                <label for="image-input" class="image-upload-btn">📷 사진 첨부</label>
+                <input type="file" id="image-input" accept="image/*" style="display: none;">
+                <span id="file-name-preview"></span>
+            </div>
+            
+            <div class="input-form">
+                <input type="text" id="message-input" placeholder="메시지를 입력하세요..." autocomplete="off">
+                <button id="send-btn">전송</button>
+            </div>
+        </footer>
+    </div>
+
+    <div class="modal-overlay" id="mypage-modal">
+        <div class="modal-box">
+            <h2>마이페이지</h2>
+            <hr>
+            <div class="modal-group">
+                <label for="profile-name">이름 설정</label>
+                <input type="text" id="profile-name" placeholder="사용할 실명을 입력하세요">
+            </div>
+            <div class="modal-group">
+                <label for="new-password">새 비밀번호 변경</label>
+                <input type="password" id="new-password" placeholder="변경할 새 비밀번호 입력">
+            </div>
+            <div class="modal-buttons">
+                <button id="save-profile-btn">저장하기</button>
+                <button id="close-modal-btn">닫기</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/chat.js"></script>
+</body>
+</html>
